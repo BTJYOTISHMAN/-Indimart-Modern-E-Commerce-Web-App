@@ -1,4 +1,5 @@
 # -Indimart-Modern-E-Commerce-Web-App
+site is live at- https://btjyotishman.github.io/-Indimart-Modern-E-Commerce-Web-App/
 Indimart is a modern responsive e-commerce website built using HTML, CSS, and JavaScript.
 It includes product listings, cart system, wishlist, authentication UI, dark mode, and payment integration to simulate a real online shopping platform.
 The project is designed with clean UI/UX and responsive layout for desktop, laptop, tablet, and mobile devices.
