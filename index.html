@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indimart 🛒</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Social Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- 🔥 HEADER -->
+<header class="main-header">
+
+  <div class="logo" onclick="showSection('home')">🛒 Indimart</div>
+
+  <div class="location">
+    📍 Deliver to <span>India</span>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search products...">
+    <button onclick="searchProducts()">🔍</button>
+  </div>
+
+  <div class="account" onclick="showSection('login')">
+    <p>Hello, Sign in</p>
+    <strong>Account</strong>
+  </div>
+
+  <div class="cart" onclick="window.location.href='cart.html'">
+    🛒 Cart <span id="cartCount">0</span>
+  </div>
+
+  <button onclick="toggleDark()">🌙</button>
+
+</header>
+
+<!-- 🔥 HOME SECTION -->
+<div id="homeSection">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a onclick="filterByCategory('electronics')">Electronics 📱</a>
+    <a onclick="filterByCategory('clothing')">Fashion 👕</a>
+    <a onclick="filterByCategory('books')">Books 📚</a>
+    <a onclick="filterByCategory('shoes')">Shoes 👟</a>
+  </nav>
+
+  <!-- SLIDER -->
+  <section class="slider">
+    <img id="slideImg" src="">
+  </section>
+
+  <!-- CATEGORY GRID -->
+  <section class="category-grid">
+
+    <div onclick="filterByType('mobile')">📱 Mobiles</div>
+    <div onclick="filterByType('laptop')">💻 Laptops</div>
+    <div onclick="filterByType('cloth')">👕 Clothes</div>
+    <div onclick="filterByType('shoes')">👟 Shoes</div>
+    <div onclick="filterByType('book')">📚 Books</div>
+
+  </section>
+
+  <!-- FILTER -->
+  <section class="filters">
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+    </select>
+
+    <select id="sort">
+      <option value="">Sort</option>
+      <option value="low">Price Low → High</option>
+      <option value="high">Price High → Low</option>
+      <option value="rating">Rating High → Low</option>
+    </select>
+  </section>
+
+  <!-- PRODUCTS -->
+  <h2 class="section-title">🔥 Products</h2>
+  <section id="products"></section>
+
+</div>
+
+<!-- 🔐 LOGIN -->
+<div id="loginSection" class="hidden">
+  <div class="auth-box">
+    <h2>Login</h2>
+    <input id="loginEmail" placeholder="Email">
+    <input id="loginPassword" type="password" placeholder="Password">
+    <button onclick="loginUser()">Login</button>
+    <p onclick="showSection('signup')">New user? Signup</p>
+  </div>
+</div>
+
+<!-- 📝 SIGNUP -->
+<div id="signupSection" class="hidden">
+  <div class="auth-box">
+    <h2>Signup</h2>
+    <input id="name" placeholder="Name">
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="signupUser()">Create Account</button>
+    <p onclick="showSection('login')">Already have account? Login</p>
+  </div>
+</div>
+
+<!-- 💳 PAYMENT -->
+<div id="paymentSection" class="hidden">
+  <div class="auth-box">
+    <h2>💳 Payment</h2>
+    <input placeholder="Card Number">
+    <input placeholder="Expiry">
+    <input placeholder="CVV">
+
+    <button onclick="showSection('order')">Order Now</button>
+    <button onclick="showSection('home')" style="background:#ef4444;">Cancel</button>
+  </div>
+</div>
+
+<!-- 📦 ORDER TRACKING -->
+<div id="orderSection" class="hidden">
+  <div class="auth-box">
+    <h2>📦 Order Tracking</h2>
+    <p>Status: Processing...</p>
+
+    <div class="track-bar">
+      <div class="progress" style="width:50%"></div>
+    </div>
+
+    <button onclick="showSection('home')">⬅ Return to Home</button>
+  </div>
+</div>
+
+<!-- ❤️ WISHLIST -->
+<div class="wishlist-floating">
+  ❤️ <span id="wishlistCount">0</span>
+</div>
+
+<!-- 🔥 MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- 🧑‍💼 ADMIN DASHBOARD -->
+<section id="adminSection" style="padding:20px;">
+  <h2>Admin Dashboard</h2>
+  <div id="orders"></div>
+</section>
+
+<!-- 🔥 FOOTER -->
+<footer class="footer">
+
+  <!-- ABOUT -->
+  <div>
+    <h3>About Indimart</h3>
+    <p>
+      Indimart is a modern Indian eCommerce platform designed to bring 
+      electronics, fashion, books, groceries, and daily essentials 
+      together in one place. Our goal is to deliver high-quality products 
+      at affordable prices with fast delivery across India.
+      Built with innovation and simplicity, Indimart focuses on creating
+      a smooth shopping experience for everyone.
+    </p>
+  </div>
+
+  <!-- CONTACT -->
+  <div>
+    <h3>Contact</h3>
+    <p>📧 Email: support@indimart.com</p>
+    <p>📞 Phone: +91 98765 43210</p>
+
+    <h3 style="margin-top:10px;">Follow Us</h3>
+
+    <p>
+      <a href="#" style="color:white;margin-right:10px;">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+    </p>
+
+    <p>
+      <a href="#" style="color:white;margin-right:10px;">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </p>
+
+    <p>
+      <a href="#" style="color:white;">
+        <i class="fab fa-x-twitter"></i> Twitter
+      </a>
+    </p>
+
+  </div>
+
+  <!-- PRIVACY -->
+  <div>
+    <h3>Privacy Policy</h3>
+    <p>
+      Indimart respects your privacy. We only collect necessary
+      information such as name, email, and order details to process
+      your purchases and improve our services.
+    </p>
+
+    <p>
+      We never sell or share your personal information with third
+      parties without consent. Payments are securely processed and
+      protected using trusted payment systems.
+    </p>
+  </div>
+
+</footer>
+
+<!-- MAKE IN INDIA -->
+<div style="text-align:center;padding:10px;background:#0f172a;color:white;">
+ 🇮🇳 Indimart • Since Make in India 2026
+</div>
+
+<!-- 🔥 SCRIPTS -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js"></script>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

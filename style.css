@@ -1,0 +1,543 @@
+/* ================= RESET ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background:#eaeded;
+  color:#111;
+  line-height:1.5;
+  transition:0.3s;
+}
+
+/* ================= DARK MODE ================= */
+
+.dark{
+  background:#0f172a;
+  color:white;
+}
+
+.dark .card{
+  background:#1e293b;
+  color:white;
+}
+
+.dark .navbar,
+.dark .main-header{
+  background:#020617;
+}
+
+/* DARK FOOTER */
+
+.dark .footer{
+  background:#020617;
+}
+
+.dark .footer a{
+  color:#e2e8f0;
+}
+
+/* ================= HEADER ================= */
+
+.main-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  padding:12px 20px;
+  background:#131921;
+  color:white;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#facc15;
+  cursor:pointer;
+}
+
+.location{
+  font-size:12px;
+}
+
+.location span{
+  display:block;
+  font-weight:bold;
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+  display:flex;
+  flex:1;
+  max-width:650px;
+}
+
+.search-box input{
+  flex:1;
+  padding:10px;
+  border:none;
+  outline:none;
+}
+
+.search-box button{
+  padding:10px 16px;
+  border:none;
+  background:#febd69;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.search-box button:hover{
+  background:#f3a847;
+}
+
+/* ================= ACCOUNT + CART ================= */
+
+.account{
+  font-size:12px;
+  cursor:pointer;
+}
+
+.cart{
+  position:relative;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.cart span{
+  position:absolute;
+  top:-8px;
+  right:-12px;
+  background:#facc15;
+  color:black;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+  padding:10px;
+  background:#232f3e;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.navbar a:hover{
+  text-decoration:underline;
+}
+
+/* ================= HOME SLIDER ================= */
+
+.slider{
+  width:100%;
+  height:320px;
+}
+
+.slider img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ================= CATEGORY GRID ================= */
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+.category-grid div{
+  background:white;
+  padding:20px;
+  text-align:center;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.category-grid div:hover{
+  transform:translateY(-5px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ================= FILTER ================= */
+
+.filters{
+  display:flex;
+  gap:10px;
+  padding:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.filters select{
+  padding:8px;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+/* ================= PRODUCT GRID ================= */
+
+#products,
+#deals,
+#topRated,
+#newArrivals{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+  padding:25px;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.card{
+  background:white;
+  border-radius:12px;
+  padding:18px;
+  border:1px solid #e5e7eb;
+  text-align:center;
+  transition:0.3s;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ================= BADGE ================= */
+
+.discount{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:#ef4444;
+  color:white;
+  padding:3px 8px;
+  font-size:12px;
+  border-radius:5px;
+}
+
+/* ================= IMAGE SLIDER ================= */
+
+.img-slider{
+  position:relative;
+  width:100%;
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+
+.slide{
+  position:absolute;
+  max-width:100%;
+  max-height:200px;
+  object-fit:contain;
+  opacity:0;
+  transition:0.5s;
+}
+
+.slide.active{
+  opacity:1;
+}
+
+/* ================= CARD TEXT ================= */
+
+.card h3{
+  font-size:15px;
+  margin:10px 0;
+  height:42px;
+  overflow:hidden;
+}
+
+.card p{
+  font-size:14px;
+}
+
+.card strong{
+  color:#b12704;
+  font-size:18px;
+}
+
+/* ================= RATING ================= */
+
+.rating{
+  color:#f59e0b;
+  font-size:14px;
+}
+
+/* ================= BUTTONS ================= */
+
+button{
+  margin-top:10px;
+  padding:8px 12px;
+  border:none;
+  border-radius:6px;
+  background:#ffd814;
+  cursor:pointer;
+  transition:0.2s;
+  font-size:13px;
+}
+
+button:hover{
+  background:#f7ca00;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.modal-box{
+  background:white;
+  color:black;
+  padding:20px;
+  border-radius:10px;
+  width:90%;
+  max-width:400px;
+}
+
+.modal-box img{
+  width:100%;
+  height:220px;
+  object-fit:contain;
+}
+
+.close{
+  float:right;
+  font-size:25px;
+  cursor:pointer;
+}
+
+/* ================= WISHLIST ================= */
+
+.wishlist-floating{
+  position:fixed;
+  top:20px;
+  right:80px;
+  background:#232f3e;
+  color:white;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:bold;
+  z-index:999;
+}
+
+/* ================= AUTH SECTIONS ================= */
+
+#loginSection,
+#signupSection,
+#paymentSection,
+#orderSection{
+  display:none;
+  padding:40px 20px;
+}
+
+.auth-box{
+  max-width:400px;
+  margin:auto;
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+  text-align:center;
+}
+
+.auth-box input{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+/* ================= ORDER TRACK ================= */
+
+.track-bar{
+  width:100%;
+  height:10px;
+  background:#ddd;
+  border-radius:10px;
+  margin-top:20px;
+}
+
+.progress{
+  height:10px;
+  background:#22c55e;
+  border-radius:10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  padding:30px;
+  background:#131921;
+  color:white;
+}
+
+.footer h3{
+  margin-bottom:10px;
+  font-size:16px;
+}
+
+.footer p{
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+/* SOCIAL LINKS */
+
+.footer a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.footer a:hover{
+  color:#facc15;
+}
+
+/* SOCIAL ICONS */
+
+.footer i{
+  margin-right:6px;
+  font-size:16px;
+}
+
+/* ================= MAKE IN INDIA BAR ================= */
+
+.india-bar{
+  text-align:center;
+  padding:12px;
+  background:#0f172a;
+  color:white;
+  font-size:14px;
+}
+
+/* ================= LOADER ================= */
+
+.loader{
+  border:6px solid #ccc;
+  border-top:6px solid #ff9900;
+  border-radius:50%;
+  width:50px;
+  height:50px;
+  margin:60px auto;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  100%{ transform:rotate(360deg); }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+
+@media(max-width:900px){
+
+.slider{
+  height:250px;
+}
+
+#products{
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+
+.img-slider{
+  height:200px;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.main-header{
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.search-box{
+  width:100%;
+}
+
+.navbar{
+  gap:10px;
+}
+
+.slider{
+  height:200px;
+}
+
+#products{
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+}
+
+.card h3{
+  font-size:13px;
+}
+
+.actions{
+  flex-direction:column;
+}
+
+.img-slider{
+  height:180px;
+}
+
+.footer{
+  grid-template-columns:1fr;
+  text-align:center;
+}
+
+}
